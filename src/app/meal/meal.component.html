@@ -1,0 +1,73 @@
+<div class="p-grid parent_div">
+  <div class="p-col-12 p-md-6 p-lg-2">
+    <div class="box"></div>
+  </div>
+  <div class="p-col-12 p-md-6 p-lg-8">
+    <div class="box main_content_card">
+      <h1 class="main_content_heading">Get Random Meal Recipe!</h1>
+      <p-card>
+        <div *ngIf="randomMeal" class="p-grid">
+          <div class="p-col-12 p-md-6 p-lg-8">
+            <div class="box">
+              <div>
+                <div class="image_div">
+                  <img class="responsive" src="{{ randomMeal.strMealThumb }}" />
+                  <div class="mealName">
+                    <h1 class="second-txt">
+                      <p>{{ randomMeal.strMeal }}</p>
+                    </h1>
+                  </div>
+                </div>
+
+                <!--<iframe width="560" height="315" src="'https://www.youtube.com/embed/'+{{randomMeal.youtubeVideoId}} | safeUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+              </div>
+            </div>
+          </div>
+          <div class="p-col-12 p-md-6 p-lg-4">
+            <div class="box right_div">
+              <div class="p-grid">
+                <div class="p-col"><h2>Dish Area:</h2></div>
+                <div class="p-col">
+                  <h2>{{ randomMeal.strArea }}</h2>
+                </div>
+              </div>
+              <div class="p-grid">
+                <div class="p-col"><h2>Dish Category:</h2></div>
+                <div class="p-col">
+                  <h2>{{ randomMeal.strCategory }}</h2>
+                </div>
+              </div>
+
+              <div class="p-grid">
+                <div class="p-col"><h2>Receipe and Instructions</h2></div>
+                <div >
+                  <div>
+                  <p>
+                    {{ randomMeal.strInstructions }}
+                  </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+
+          <div class="center">
+            <button
+              pButton
+              type="button"
+              label="Get a new Recipe!"
+              (click)="getRandomMeal()"
+              class="round_button p-button-secondary"
+            ></button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-2">
+    <div class="box"></div>
+  </div>
+</div>
